@@ -11,6 +11,8 @@ class Modal {
             ".popup", 
             ".popup .popup_close"
         );
+
+        this.showModalByTime(".popup", 3000)
     }
 
     bindModal(triggerSelector, modalSelector, closeSelector) {
@@ -43,6 +45,14 @@ class Modal {
                 // document.body.classList.remove("modal-open");
             }
         })
+    }
+    
+    showModalByTime(selector, time) {
+        setTimeout(() => {
+            const modal = document.querySelector(selector)
+            modal.style.display = "block"
+            document.body.style.overflow = "hidden";
+        }, time)
     }
 }
 
