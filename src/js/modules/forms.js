@@ -3,10 +3,23 @@ import { NotificationStatus } from "./status";
 class Forms {
     constructor() {
         const forms = document.querySelectorAll("form"),
-            inputs = document.querySelectorAll("input");   
+            inputs = document.querySelectorAll("input"),
+            phoneInputs = document.querySelectorAll('input[name="user_phone"]');  
 
+        phoneInputs.forEach(item => {
+            item.addEventListener("input", this.handlerReplaceString)
+        })
+        
         this.forms = forms
-        this.forms = inputs
+        this.inputs = inputs
+
+        this.formEvents()
+    }
+
+    handlerReplaceString(event) {
+        const item = event.currentTarget
+        // "/\D/" ищет все не цифры
+        item.value = item.value.replace(/\D/, "");
     }
 
     createStatusMessage(element) {
