@@ -51,6 +51,3 @@ npm start
 ## Используемые библиотеки
 - [Slick Slider](https://kenwheeler.github.io/slick/) – для создания слайдера
 - [Webpack](https://webpack.js.org/) – для сборки проекта
-
-## Автор
-[Ваше Имя] - [Ваши контакты]
