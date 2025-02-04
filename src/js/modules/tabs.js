@@ -1,5 +1,5 @@
 class Tabs {
-    constructor(headerSelector, tabSelector, contentSelector, activeClass) {
+    constructor(headerSelector, tabSelector, contentSelector, activeClass, display = "block") {
         const header = document.querySelector(headerSelector),
             tab = document.querySelectorAll(tabSelector),
             content = document.querySelectorAll(contentSelector);
@@ -12,6 +12,7 @@ class Tabs {
         this.tabSelector = tabSelector
         this.contentSelector = contentSelector
         this.activeClass = activeClass
+        this.display = display
         
         this.tabsInit()
     }
@@ -36,7 +37,7 @@ class Tabs {
     }
 
     showTabContent(index = 0) {
-        this.content[index].style.display = "block";
+        this.content[index].style.display = this.display;
         this.tab[index].classList.add(this.activeClass);
     }
 

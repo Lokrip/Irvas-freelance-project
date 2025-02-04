@@ -12,6 +12,12 @@ class Modal {
             ".popup .popup_close"
         );
 
+        this.bindModal(
+            ".popup_calc_btn",
+            ".popup_calc",
+            ".popup_calc_close"
+        )
+
         this.showModalByTime(".popup", 3000)
     }
 
